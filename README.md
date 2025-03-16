@@ -1,24 +1,73 @@
-# README
+# URL Shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple URL shortener built with Ruby on Rails.
 
-Things you may want to cover:
+## 🚀 Features
+- Shortens long URLs
+- Validates URLs
+- Displays a list of shortened URLs
+- Supports both client-side and server-side validation
 
-* Ruby version
+---
 
-* System dependencies
+## 🛠️ Setup Instructions
 
-* Configuration
+### 1 Prerequisites
+Ensure you have the following installed:
+- Ruby (>= 3.0.0 recommended)
+- Rails (>= 7.0 recommended)
+- SQLite (for local development)
+- Bundler
 
-* Database creation
+### 2 Clone the Repository
+```sh
+git clone https://github.com/kalikumar-n/url_shortner.git
+cd url-shortener
+```
 
-* Database initialization
+### 3 Install Dependencies
+```sh
+bundle install
+```
 
-* How to run the test suite
+### 4 Setup the Database
+```sh
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### 5 Start the Server
+```sh
+rails server
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-* Deployment instructions
+---
 
-* ...
+## 🧪 Running Tests
+
+### 1 Install Test Dependencies
+```sh
+gem install rspec-rails rails-controller-testing\```
+group :test do
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+end
+```
+Then run:
+```sh
+bundle install
+rails generate rspec:install
+```
+
+### 2 Run Tests
+```sh
+rspec
+```
+To run a specific test file:
+```sh
+rspec spec/controllers/short_urls_controller_spec.rb
+```
+
+---
