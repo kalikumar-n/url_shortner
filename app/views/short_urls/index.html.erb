@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg rounded" style="width: 50rem; min-height: 25rem;">
+    <div class="card-body text-center">
+      <h3 class="card-title">🔗 Shortened URLs</h3>
+      <p class="card-text text-muted">List of URLs shortened along with the original URL</p>
+    </div>
+
+    <!-- List all the shortned URLs with scrolling option -->
+    <div class="overflow-auto" style="max-height: 300px;">
+      <ul class="list-group list-group-flush">
+        <% @short_urls.each do |short_url| %>
+          <li class="list-group-item d-flex flex-column">
+            <small class="text-muted"><i class="bi bi-link"></i> Original URL:</small>
+            <span class="text-break"><%= short_url.original_url %></span>
+            
+            <div class="d-flex flex-column mt-2">
+              <small class="text-muted">
+                <i class="bi bi-magic"></i> Shorten URL:
+              </small>
+              <span class="d-flex align-items-center gap-2">
+                <a href="<%= short_url.original_url %>" target="_blank" class="text-decoration-none">
+                  <span class="fw-bold"><%= request.base_url %>/<%= short_url.short_code %></span>
+                </a>
+                
+                <button onclick="copyToClipboard('<%= request.base_url %>/<%= short_url.short_code %>', this)"
+                        class="btn btn-sm btn-outline-primary d-flex align-items-center" 
+                        data-bs-toggle="tooltip" data-bs-placement="top" title="Copy">
+                  <i class="bi bi-clipboard"></i>
+                </button>
+              </span>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="card-body text-center">
+      <%= link_to "Shorten Another URL", new_short_url_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  // function to copy the shortned url to users clipboard.
+  function copyToClipboard(url, button) {
+    navigator.clipboard.writeText(url)
+      .then(() => {
+        button.innerHTML = '<i class="bi bi-clipboard-check"></i>';
+        button.setAttribute("title", "Copied!");
+        setTimeout(() => {
+          button.innerHTML = '<i class="bi bi-clipboard"></i>';
+          button.setAttribute("title", "Copy");
+        }, 2000);
+      })
+      .catch(err => console.error("Failed to copy:", err));
+  }
+</script>
