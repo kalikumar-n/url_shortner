@@ -3,7 +3,7 @@
 A simple URL shortener built with Ruby on Rails.
 
 ## 🚀 Features
-- Shortens long URLs
+- Shortens long URLs using SecureRandom algorithm
 - Validates URLs
 - Displays a list of shortened URLs
 ---
