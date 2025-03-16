@@ -8,3 +8,8 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+/*
+ *= require bootstrap.min
+ *= require_tree .
+ *= require_self
+ */
