@@ -6,8 +6,6 @@ A simple URL shortener built with Ruby on Rails.
 - Shortens long URLs
 - Validates URLs
 - Displays a list of shortened URLs
-- Supports both client-side and server-side validation
-
 ---
 
 ## 🛠️ Setup Instructions
