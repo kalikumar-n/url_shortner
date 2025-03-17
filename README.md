@@ -4,8 +4,10 @@ A simple URL shortener built with Ruby on Rails.
 
 ## 🚀 Features
 - Shortens long URLs using SecureRandom algorithm
-- Validates URLs
-- Displays a list of shortened URLs
+- Copy shortened URLs to clipboard
+- Validation for valid URLs
+- List of previously shortened URLs
+- Error handling using Javascript
 ---
 
 ## 🛠️ Setup Instructions
@@ -13,7 +15,7 @@ A simple URL shortener built with Ruby on Rails.
 ### 1 Prerequisites
 Ensure you have the following installed:
 - Ruby (>= 3.0.0 recommended)
-- Rails (>= 7.0 recommended)
+- Rails (>= 8.0.2 recommended)
 - SQLite (for local development)
 - Bundler
 
